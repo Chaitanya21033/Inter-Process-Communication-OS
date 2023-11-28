@@ -1,0 +1,9 @@
+all: compile run clean
+
+compile: ipc_socket.c
+	gcc ipc_socket.c -o ipc
+
+run: ipc
+	./ipc
+clean: ipc
+	rm ipc

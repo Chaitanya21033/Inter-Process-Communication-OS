@@ -1,0 +1,8 @@
+all: compile run clear
+compile: ipc_shm.c ipc_shm2.c
+	gcc ipc_shm.c -o file1
+	gcc ipc_shm2.c -o file2
+run: file1 file2
+	./file1
+clear: file1 file2
+	rm file2 file1

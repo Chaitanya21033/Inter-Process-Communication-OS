@@ -1,0 +1,12 @@
+all: fifo runfifo cleanfifo
+
+fifo: speak_fifo.c tick_fifo.c
+	gcc speak_fifo.c -o read
+	gcc tick_fifo.c -o write
+
+runfifo: read write
+	./read & ./write
+
+cleanfifo: one two
+	rm one
+	rm two
